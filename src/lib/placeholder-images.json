@@ -1,3 +1,88 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "category-dresses",
+      "description": "Dresses category icon",
+      "imageUrl": "https://images.unsplash.com/photo-1631234764568-996fab371596?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkcmVzc2VzfGVufDB8fHx8MTc2MTYwMjA0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dresses"
+    },
+    {
+      "id": "category-bags",
+      "description": "Bags category icon",
+      "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiYWdzfGVufDB8fHx8MTc2MTYzNjQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bags"
+    },
+    {
+      "id": "category-sweaters",
+      "description": "Sweaters category icon",
+      "imageUrl": "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzd2VhdGVyc3xlbnwwfHx8fDE3NjE2MzY0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sweaters"
+    },
+    {
+      "id": "category-boots",
+      "description": "Boots category icon",
+      "imageUrl": "https://images.unsplash.com/photo-1601924638867-3a6de6b7a500?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxib290c3xlbnwwfHx8fDE3NjE2MzY0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "boots"
+    },
+    {
+      "id": "category-gifts",
+      "description": "Gifts category icon",
+      "imageUrl": "https://images.unsplash.com/photo-1699653184094-3806a9ae9bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxnaWZ0c3xlbnwwfHx8fDE3NjE2MzY0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gifts"
+    },
+    {
+      "id": "offer-style",
+      "description": "New Style offer banner image",
+      "imageUrl": "https://images.unsplash.com/photo-1641839186708-9b2e404caaa8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmYXNoaW9uJTIwc3R5bGV8ZW58MHx8fHwxNzYxNjM2NDI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion style"
+    },
+    {
+      "id": "offer-mega",
+      "description": "Mega Offer banner image",
+      "imageUrl": "https://images.unsplash.com/photo-1733244766159-f58f4184fd38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2FsZSUyMG9mZmVyfGVufDB8fHx8MTc2MTYzNjQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sale offer"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Blog post about fashion tips",
+      "imageUrl": "https://images.unsplash.com/photo-1519748771451-a94c596fad67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwbWFnYXppbmV8ZW58MHx8fHwxNzYxNjM2NDI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion magazine"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Blog post about summer style",
+      "imageUrl": "https://images.unsplash.com/photo-1599146604986-9e3071a41060?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdW1tZXIlMjBmYXNoaW9ufGVufDB8fHx8MTc2MTU3Mjc4OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "summer fashion"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "Blog post about accessories",
+      "imageUrl": "https://images.unsplash.com/photo-1589363463135-e811e08d8ace?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmYXNoaW9uJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzYxNTQwMTk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fashion accessories"
+    },
+    {
+      "id": "product-1",
+      "description": "Floral Summer Dress",
+      "imageUrl": "https://images.unsplash.com/photo-1604506272685-a999a4d122e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzdW1tZXIlMjBkcmVzc3xlbnwwfHx8fDE3NjE1NTg0NDl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "summer dress"
+    },
+    {
+      "id": "product-2",
+      "description": "Leather Crossbody Bag",
+      "imageUrl": "https://images.unsplash.com/photo-1603219527847-24c87f552a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsZWF0aGVyJTIwYmFnfGVufDB8fHx8MTc2MTYzNjQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather bag"
+    },
+    {
+      "id": "product-3",
+      "description": "Knit Cropped Sweater",
+      "imageUrl": "https://images.unsplash.com/photo-1652904872936-f85e04e26a97?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxrbml0JTIwc3dlYXRlcnxlbnwwfHx8fDE3NjE2MDk1MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "knit sweater"
+    },
+    {
+      "id": "product-4",
+      "description": "Suede Ankle Boots",
+      "imageUrl": "https://images.unsplash.com/photo-1732706425339-2a84400a43fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdWVkZSUyMGJvb3RzfGVufDB8fHx8MTc2MTYwODc1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "suede boots"
+    }
+  ]
 }
