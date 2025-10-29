@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Shopus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-gray-800 text-center mb-10">Our Collection</h1>
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyDpNI7HDrSR5lnPuJisjQLndV0ssESzmuE",
+          authDomain: "our-ecommerce-cbucket-web.firebaseapp.com",
+          projectId: "our-ecommerce-cbucket-web",
+          storageBucket: "our-ecommerce-cbucket-web.firebasestorage.app",
+          messagingSenderId: "959672867883",
+          appId: "1:959672867883:web:3daae7a6e9d878ac259e6e"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const appId = "our-ecommerce-cbucket-web";
+
+        async function fetchProducts() {
+            const productGrid = document.getElementById('product-grid');
+            const productsColPath = `/artifacts/${appId}/public/data/products`;
+            try {
+                const querySnapshot = await getDocs(collection(db, productsColPath));
+                querySnapshot.forEach((doc) => {
+                    const product = doc.data();
+                    const productCard = `
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
+                                <p class="text-gray-600 mt-1">$${product.price.toFixed(2)}</p>
+                                <div class="flex justify-between items-center mt-4">
+                                     <button class="bg-pink-600 text-white text-sm font-semibold py-2 px-4 rounded-lg hover:bg-pink-700">Add to Cart</button>
+                                     <button class="text-gray-400 hover:text-pink-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    productGrid.innerHTML += productCard;
+                });
+            } catch (error) {
+                console.error("Error fetching products: ", error);
+                productGrid.innerHTML = `<p class="text-red-500 col-span-full">Error loading products. Please try again later.</p>`;
+            }
+        }
+
+        fetchProducts();
+    </script>
+</body>
+</html>

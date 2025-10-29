@@ -25,14 +25,14 @@ const features = [
 
 export function FeaturesBar() {
   return (
-    <section className="border-y bg-card py-12">
+    <section className="py-12 bg-gradient-to-r from-red-800 to-red-950">
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-4">
             <feature.icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
             <div>
-              <h5 className="font-bold text-gray-800">{feature.title}</h5>
-              <p className="text-sm text-gray-600">{feature.description}</p>
+              <h5 className="font-bold text-white">{feature.title}</h5>
+              <p className="text-sm text-gray-300">{feature.description}</p>
             </div>
           </div>
         ))}

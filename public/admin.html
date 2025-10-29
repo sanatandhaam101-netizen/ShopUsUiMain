@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopus Admin - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen bg-gray-100">
+        <!-- Sidebar -->
+        <div id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-gray-900 text-white p-6 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50">
+            <a href="#" class="text-3xl font-bold text-pink-500 mb-8 block">Shopus<span class="text-white">Admin</span></a>
+            
+            <nav>
+                <a href="#" class="flex items-center py-3 px-4 rounded-lg bg-pink-600 text-white font-semibold">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6-4a1 1 0 001-1v-1a1 1 0 10-2 0v1a1 1 0 001 1zm5 0a1 1 0 001-1v-1a1 1 0 10-2 0v1a1 1 0 001 1z"></path></svg>
+                    Dashboard
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Products
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    Orders
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Customers
+                </a>
+                <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    Settings
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <div class="flex-1 flex flex-col overflow-hidden lg:ml-64">
+            <!-- Top Navbar -->
+            <header class="bg-white shadow-md p-4 flex justify-between items-center">
+                <!-- Mobile Sidebar Toggle -->
+                <button id="sidebar-toggle" class="text-gray-600 lg:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+
+                <!-- Search Bar -->
+                <div class="relative w-full max-w-md hidden sm:block">
+                    <input type="text" placeholder="Search orders, products..." class="w-full pl-10 pr-4 py-2 border rounded-full bg-gray-100 focus:outline-none focus:bg-white focus:ring-2 focus:ring-pink-500">
+                    <svg class="w-5 h-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+
+                <!-- Icons & Profile -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-pink-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341A6.002 6.002 0 006 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                    </button>
+                    <div class="relative">
+                        <img src="https://placehold.co/40x40/fecdd3/db2777?text=A" alt="Admin" class="w-10 h-10 rounded-full cursor-pointer">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto p-6">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6">Dashboard</h2>
+
+                <!-- Stat Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-between">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500">Total Sales</span>
+                            <p class="text-3xl font-bold text-gray-900">$24,890</p>
+                        </div>
+                        <div class="bg-pink-100 text-pink-600 p-3 rounded-full">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0c-1.657 0-3-.895-3-2s1.343-2 3-2 3-.895 3-2-1.343-2-3-2m0 8c-1.11 0-2.08-.402-2.599-1M12 16v1m0-1v-8"></path></svg>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-between">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500">Total Orders</span>
+                            <p class="text-3xl font-bold text-gray-900">1,450</p>
+                        </div>
+                        <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-between">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500">Total Customers</span>
+                            <p class="text-3xl font-bold text-gray-900">832</p>
+                        </div>
+                        <div class="bg-green-100 text-green-600 p-3 rounded-full">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-center justify-between">
+                        <div>
+                            <span class="text-sm font-semibold text-gray-500">Total Revenue</span>
+                            <p class="text-3xl font-bold text-gray-900">$56,780</p>
+                        </div>
+                        <div class="bg-yellow-100 text-yellow-600 p-3 rounded-full">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Section 1: Recent Orders Table (Takes 2/3 width) -->
+                    <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-wrap justify-between items-center gap-4 mb-4">
+                            <h3 class="text-xl font-semibold text-gray-800">Recent Orders</h3>
+                            
+                            <!-- === THIS IS THE BUTTON YOU REQUESTED === -->
+                            <button id="add-test-products-btn" class="bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all">
+                                Add 5 Test Products
+                            </button>
+                            <!-- === END NEW BUTTON === -->
+
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full min-w-max text-left">
+                                <thead>
+                                    <tr class="border-b bg-gray-50">
+                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Order ID</th>
+                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Customer</th>
+                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Total</th>
+                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Status</th>
+                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-gray-700">
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4">#1201</td>
+                                        <td class="py-3 px-4">Jane Cooper</td>
+                                        <td class="py-3 px-4">$120.50</td>
+                                        <td class="py-3 px-4">
+                                            <span class="bg-green-100 text-green-700 py-1 px-3 rounded-full text-xs font-semibold">Delivered</span>
+                                        </td>
+                                        <td class="py-3 px-4">Oct 27, 2025</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4">#1202</td>
+                                        <td class="py-3 px-4">Cody Fisher</td>
+                                        <td class="py-3 px-4">$89.90</td>
+                                        <td class="py-3 px-4">
+                                            <span class="bg-yellow-100 text-yellow-700 py-1 px-3 rounded-full text-xs font-semibold">Pending</span>
+                                        </td>
+                                        <td class="py-3 px-4">Oct 27, 2025</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4">#1203</td>
+                                        <td class="py-3 px-4">Esther Howard</td>
+                                        <td class="py-3 px-4">$230.00</td>
+                                        <td class="py-3 px-4">
+                                            <span class="bg-blue-100 text-blue-700 py-1 px-3 rounded-full text-xs font-semibold">Shipped</span>
+                                        </td>
+                                        <td class="py-3 px-4">Oct 26, 2025</td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                        <td class="py-3 px-4">#1204</td>
+                                        <td class="py-3 px-4">Robert Fox</td>
+                                        <td class="py-3 px-4">$45.00</td>
+                                        <td class="py-3 px-4">
+                                            <span class="bg-red-100 text-red-700 py-1 px-3 rounded-full text-xs font-semibold">Cancelled</span>
+                                        </td>
+                                        <td class="py-3 px-4">Oct 25, 2025</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Add New Product Form (Takes 1/3 width) -->
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Add New Product</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="product-name" class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
+                                <input type="text" id="product-name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. 'Vintage Tee'">
+                            </div>
+                            <div class="mb-4">
+                                <label for="product-price" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
+                                <input type="number" id="product-price" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. '24.99'">
+                            </div>
+                            <div class="mb-4">
+                                <label for="product-category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                                <select id="product-category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white">
+                                    <option>Dresses</option>
+                                    <option>Bags</option>
+                                    <option>Sweaters</option>
+                                    <option>Boots</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="product-image" class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
+                                <input type="text" id="product-image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. 'https://placehold.co/...'S">
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-pink-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-pink-700 hover:to-pink-800 transition-all">
+                                Add Product
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+
+        <!-- Sidebar overlay for mobile -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+    </div>
+
+    <!-- Firebase SDKs - This is the Backend! -->
+    <script type="module">
+        // Imports from your config
+        import { initializeApp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            onAuthStateChanged, 
+            signInAnonymously,
+            signInWithCustomToken
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            collection, 
+            addDoc, 
+            query,
+            onSnapshot // Added onSnapshot to be consistent
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- GLOBAL VARIABLES (From your config) ---
+        const firebaseConfig = {
+          apiKey: "AIzaSyDpNI7HDrSR5lnPuJisjQLndV0ssESzmuE",
+          authDomain: "our-ecommerce-cbucket-web.firebaseapp.com",
+          projectId: "our-ecommerce-cbucket-web",
+          storageBucket: "our-ecommerce-cbucket-web.firebasestorage.app",
+          messagingSenderId: "959672867883",
+          appId: "1:959672867883:web:3daae7a6e9d878ac259e6e"
+        };
+        
+        const appId = "our-ecommerce-cbucket-web"; 
+        const initialAuthToken = null;
+        let app, db, auth, currentUserId; 
+
+        // --- Main Firebase Logic ---
+        try {
+            // --- Initialize Firebase ---
+            app = initializeApp(firebaseConfig);
+            setLogLevel('Debug');
+            auth = getAuth(app);
+            db = getFirestore(app);
+
+            // --- Authentication ---
+            if (initialAuthToken) {
+                await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+                await signInAnonymously(auth);
+            }
+
+            // --- Auth State Changed Listener ---
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    currentUserId = user.uid;
+                    console.log("admin.html: User signed in:", currentUserId);
+                    
+                    // --- *** ATTACH BUTTON LISTENER *** ---
+                    // Now that we are signed in, activate the button
+                    setupAddProductsButton();
+
+                } else {
+                    currentUserId = null;
+                    console.log("admin.html: User is signed out.");
+                }
+            });
+
+        } catch (error) {
+            console.error("Firebase Initialization Error:", error);
+            const mainContent = document.querySelector('main');
+            if(mainContent) {
+                mainContent.innerHTML = `<div class="p-6 text-red-700 bg-red-100 border border-red-300 rounded-lg"><strong>Error:</strong> Could not connect to Firebase. Please check console for details.</div>`;
+            }
+        }
+
+        // --- === NEW FUNCTION === ---
+        // Attaches the click event to the new button
+        function setupAddProductsButton() {
+            const btn = document.getElementById('add-test-products-btn');
+            if (!btn) return;
+
+            // Simple custom modal
+            const showModal = (title, message) => {
+                let modal = document.getElementById('feedback-modal');
+                if (modal) modal.remove();
+                
+                modal = document.createElement('div');
+                modal.id = 'feedback-modal';
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full">
+                        <h3 class="text-xl font-semibold mb-3">${title}</h3>
+                        <p class="text-gray-700 mb-5">${message}</p>
+                        <button id="modal-close-btn" class="w-full bg-pink-600 text-white py-2 px-4 rounded-lg hover:bg-pink-700">OK</button>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                document.getElementById('modal-close-btn').onclick = () => modal.remove();
+            };
+
+            btn.addEventListener('click', async () => {
+                if (!db || !appId) {
+                    console.error("DB not initialized!");
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.textContent = "Adding...";
+
+                // 5 Test Products
+                const testProducts = [
+                    { name: "Vintage Tee", price: 24.99, oldPrice: 30.00, image: "https://placehold.co/300x300/F87171/ffffff?text=Vintage+Tee" },
+                    { name: "Leather Bag", price: 79.99, oldPrice: 99.99, image: "https://placehold.co/300x300/FBBF24/ffffff?text=Leather+Bag" },
+                    { name: "Blue Denim Jeans", price: 54.50, oldPrice: 65.00, image: "https://placehold.co/300x300/60A5FA/ffffff?text=Denim+Jeans" },
+                    { name: "Running Sneakers", price: 88.00, oldPrice: 110.00, image: "https://placehold.co/300x300/34D399/ffffff?text=Sneakers" },
+                    { name: "Classic Watch", price: 120.00, oldPrice: 150.00, image: "https://placehold.co/300x300/A78BFA/ffffff?text=Watch" }
+                ];
+
+                try {
+                    const productsColPath = `/artifacts/${appId}/public/data/products`;
+                    console.log(`Adding 5 products to: ${productsColPath}`);
+                    
+                    for (const product of testProducts) {
+                        await addDoc(collection(db, productsColPath), product);
+                    }
+                    
+                    console.log("Successfully added 5 test products!");
+                    showModal("Success!", "5 test products have been added! Check the index.html page.");
+
+                } catch (error) {
+                    console.error("Error adding test products: ", error);
+                    showModal("Error", "Error adding products. Check console for details.");
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = "Add 5 Test Products";
+                }
+            });
+        }
+    </script>
+
+    <!-- Mobile sidebar script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.getElementById('sidebar');
+            const sidebarToggle = document.getElementById('sidebar-toggle');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+            const toggleSidebar = () => {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebarOverlay.classList.toggle('hidden');
+            };
+
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', toggleSidebar);
+            }
+
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', toggleSidebar);
+            }
+        });
+    </script>
+</body>
+</html>

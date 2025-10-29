@@ -15,7 +15,7 @@ export function Header() {
       <div className="border-b bg-secondary/50 py-2 text-sm text-muted-foreground">
         <div className="container mx-auto flex items-center justify-between px-4">
           <div className="hidden items-center gap-6 md:flex">
-            <Link href="#" className="hover:text-primary">
+            <Link href="/login.html" className="hover:text-primary">
               Account
             </Link>
             <Link href="#" className="hover:text-primary">
@@ -23,6 +23,9 @@ export function Header() {
             </Link>
             <Link href="#" className="hover:text-primary">
               Support
+            </Link>
+            <Link href="/admin.html" className="hover:text-primary">
+              Admin
             </Link>
           </div>
           <div className="text-right w-full md:w-auto">
@@ -59,15 +62,11 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Link href="#" className="relative text-muted-foreground hover:text-primary">
-              <GitCompareArrows className="h-6 w-6" />
-              <Badge variant="destructive" className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0">3</Badge>
-            </Link>
-            <Link href="#" className="relative text-muted-foreground hover:text-primary">
+            <Link href="/wishlist.html" className="relative text-muted-foreground hover:text-primary">
               <Heart className="h-6 w-6" />
               <Badge variant="destructive" className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0">5</Badge>
             </Link>
-            <Link href="#" className="relative text-muted-foreground hover:text-primary">
+            <Link href="/cart.html" className="relative text-muted-foreground hover:text-primary">
               <ShoppingCart className="h-6 w-6" />
               <Badge variant="destructive" className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full p-0">2</Badge>
             </Link>
@@ -86,17 +85,18 @@ export function Header() {
           <CategoryDropdown />
 
           <div className="flex gap-8">
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">Home</Link>
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">Shop</Link>
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">Pages</Link>
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">About</Link>
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">Blog</Link>
-            <Link href="#" className="font-semibold text-gray-700 hover:text-primary">Contact</Link>
+            <Link href="/" className="font-semibold text-gray-700 hover:text-primary">Home</Link>
+            <Link href="/shop.html" className="font-semibold text-gray-700 hover:text-primary">Shop</Link>
+            <Link href="/about.html" className="font-semibold text-gray-700 hover:text-primary">About</Link>
+            <Link href="/blog.html" className="font-semibold text-gray-700 hover:text-primary">Blog</Link>
+            <Link href="/contact.html" className="font-semibold text-gray-700 hover:text-primary">Contact</Link>
+            <Link href="/privacy-policy.html" className="font-semibold text-gray-700 hover:text-primary">Privacy Policy</Link>
+
           </div>
 
-          <Link href="#" className="font-semibold text-primary hover:text-primary/80">
-            Become Vendor
-          </Link>
+          <Button asChild>
+            <Link href="/become-vendor.html">Become Vendor</Link>
+          </Button>
         </div>
       </div>
     </header>
