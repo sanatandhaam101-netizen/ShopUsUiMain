@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         {children}
         <Toaster />
+        <script src="/cart.js"></script>
       </body>
     </html>
   );

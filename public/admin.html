@@ -26,6 +26,10 @@
                     <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6-4a1 1 0 001-1v-1a1 1 0 10-2 0v1a1 1 0 001 1zm5 0a1 1 0 001-1v-1a1 1 0 10-2 0v1a1 1 0 001 1z"></path></svg>
                     Dashboard
                 </a>
+                <a href="/vendor-dashboard.html" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    Vendor Dashboard
+                </a>
                 <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-gray-800 transition-colors mt-2">
                     <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     Products
@@ -115,105 +119,24 @@
                     </div>
                 </div>
 
-                <!-- Main Content Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    
-                    <!-- Section 1: Recent Orders Table (Takes 2/3 width) -->
-                    <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-md">
-                        <div class="flex flex-wrap justify-between items-center gap-4 mb-4">
-                            <h3 class="text-xl font-semibold text-gray-800">Recent Orders</h3>
-                            
-                            <!-- === THIS IS THE BUTTON YOU REQUESTED === -->
-                            <button id="add-test-products-btn" class="bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all">
-                                Add 5 Test Products
-                            </button>
-                            <!-- === END NEW BUTTON === -->
-
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full min-w-max text-left">
-                                <thead>
-                                    <tr class="border-b bg-gray-50">
-                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Order ID</th>
-                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Customer</th>
-                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Total</th>
-                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Status</th>
-                                        <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-gray-700">
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4">#1201</td>
-                                        <td class="py-3 px-4">Jane Cooper</td>
-                                        <td class="py-3 px-4">$120.50</td>
-                                        <td class="py-3 px-4">
-                                            <span class="bg-green-100 text-green-700 py-1 px-3 rounded-full text-xs font-semibold">Delivered</span>
-                                        </td>
-                                        <td class="py-3 px-4">Oct 27, 2025</td>
-                                    </tr>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4">#1202</td>
-                                        <td class="py-3 px-4">Cody Fisher</td>
-                                        <td class="py-3 px-4">$89.90</td>
-                                        <td class="py-3 px-4">
-                                            <span class="bg-yellow-100 text-yellow-700 py-1 px-3 rounded-full text-xs font-semibold">Pending</span>
-                                        </td>
-                                        <td class="py-3 px-4">Oct 27, 2025</td>
-                                    </tr>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4">#1203</td>
-                                        <td class="py-3 px-4">Esther Howard</td>
-                                        <td class="py-3 px-4">$230.00</td>
-                                        <td class="py-3 px-4">
-                                            <span class="bg-blue-100 text-blue-700 py-1 px-3 rounded-full text-xs font-semibold">Shipped</span>
-                                        </td>
-                                        <td class="py-3 px-4">Oct 26, 2025</td>
-                                    </tr>
-                                    <tr class="border-b hover:bg-gray-50">
-                                        <td class="py-3 px-4">#1204</td>
-                                        <td class="py-3 px-4">Robert Fox</td>
-                                        <td class="py-3 px-4">$45.00</td>
-                                        <td class="py-3 px-4">
-                                            <span class="bg-red-100 text-red-700 py-1 px-3 rounded-full text-xs font-semibold">Cancelled</span>
-                                        </td>
-                                        <td class="py-3 px-4">Oct 25, 2025</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <!-- Vendor Applications Section -->
+                <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Vendor Applications</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-max text-left">
+                            <thead>
+                                <tr class="border-b bg-gray-50">
+                                    <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Brand Name</th>
+                                    <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Applicant</th>
+                                    <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Email</th>
+                                    <th class="py-3 px-4 font-semibold text-sm text-gray-600 uppercase">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vendor-applications-list" class="text-gray-700">
+                                <!-- Vendor applications will be dynamically inserted here -->
+                            </tbody>
+                        </table>
                     </div>
-
-                    <!-- Section 2: Add New Product Form (Takes 1/3 width) -->
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-4">Add New Product</h3>
-                        <form>
-                            <div class="mb-4">
-                                <label for="product-name" class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
-                                <input type="text" id="product-name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. 'Vintage Tee'">
-                            </div>
-                            <div class="mb-4">
-                                <label for="product-price" class="block text-sm font-medium text-gray-700 mb-1">Price</label>
-                                <input type="number" id="product-price" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. '24.99'">
-                            </div>
-                            <div class="mb-4">
-                                <label for="product-category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                                <select id="product-category" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white">
-                                    <option>Dresses</option>
-                                    <option>Bags</option>
-                                    <option>Sweaters</option>
-                                    <option>Boots</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label for="product-image" class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
-                                <input type="text" id="product-image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" placeholder="e.g. 'https://placehold.co/...'S">
-                            </div>
-                            <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-pink-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:from-pink-700 hover:to-pink-800 transition-all">
-                                Add Product
-                            </button>
-                        </form>
-                    </div>
-
                 </div>
             </main>
         </div>
@@ -222,25 +145,12 @@
         <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
     </div>
 
-    <!-- Firebase SDKs - This is the Backend! -->
+    <!-- Firebase SDKs -->
     <script type="module">
-        // Imports from your config
-        import { initializeApp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { 
-            getAuth, 
-            onAuthStateChanged, 
-            signInAnonymously,
-            signInWithCustomToken
-        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { 
-            getFirestore, 
-            collection, 
-            addDoc, 
-            query,
-            onSnapshot // Added onSnapshot to be consistent
-        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, onSnapshot, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-        // --- GLOBAL VARIABLES (From your config) ---
         const firebaseConfig = {
           apiKey: "AIzaSyDpNI7HDrSR5lnPuJisjQLndV0ssESzmuE",
           authDomain: "our-ecommerce-cbucket-web.firebaseapp.com",
@@ -249,135 +159,69 @@
           messagingSenderId: "959672867883",
           appId: "1:959672867883:web:3daae7a6e9d878ac259e6e"
         };
-        
-        const appId = "our-ecommerce-cbucket-web"; 
-        const initialAuthToken = null;
-        let app, db, auth, currentUserId; 
 
-        // --- Main Firebase Logic ---
-        try {
-            // --- Initialize Firebase ---
-            app = initializeApp(firebaseConfig);
-            setLogLevel('Debug');
-            auth = getAuth(app);
-            db = getFirestore(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
 
-            // --- Authentication ---
-            if (initialAuthToken) {
-                await signInWithCustomToken(auth, initialAuthToken);
-            } else {
-                await signInAnonymously(auth);
-            }
+        // Sign in anonymously to get permissions to read from the database
+        signInAnonymously(auth).catch((error) => {
+            console.error("Anonymous sign-in error:", error);
+        });
 
-            // --- Auth State Changed Listener ---
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    currentUserId = user.uid;
-                    console.log("admin.html: User signed in:", currentUserId);
-                    
-                    // --- *** ATTACH BUTTON LISTENER *** ---
-                    // Now that we are signed in, activate the button
-                    setupAddProductsButton();
+        const applicationList = document.getElementById('vendor-applications-list');
 
-                } else {
-                    currentUserId = null;
-                    console.log("admin.html: User is signed out.");
+        const applicationsRef = collection(db, "vendor-applications");
+
+        onSnapshot(applicationsRef, (snapshot) => {
+            applicationList.innerHTML = ''; // Clear the list
+            snapshot.forEach(doc => {
+                const application = { ...doc.data(), id: doc.id };
+                if (application.status === 'pending') {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="py-3 px-4">${application.brand}</td>
+                        <td class="py-3 px-4">${application.name}</td>
+                        <td class="py-3 px-4">${application.email}</td>
+                        <td class="py-3 px-4">
+                            <button data-id="${application.id}" class="approve-btn bg-green-500 text-white px-3 py-1 rounded-lg mr-2">Approve</button>
+                            <button data-id="${application.id}" class="deny-btn bg-red-500 text-white px-3 py-1 rounded-lg">Deny</button>
+                        </td>
+                    `;
+                    applicationList.appendChild(row);
                 }
             });
+        });
 
-        } catch (error) {
-            console.error("Firebase Initialization Error:", error);
-            const mainContent = document.querySelector('main');
-            if(mainContent) {
-                mainContent.innerHTML = `<div class="p-6 text-red-700 bg-red-100 border border-red-300 rounded-lg"><strong>Error:</strong> Could not connect to Firebase. Please check console for details.</div>`;
+        applicationList.addEventListener('click', async (e) => {
+            if (e.target.classList.contains('approve-btn')) {
+                const id = e.target.dataset.id;
+                const docRef = doc(db, "vendor-applications", id);
+                await updateDoc(docRef, { status: 'approved' });
             }
-        }
-
-        // --- === NEW FUNCTION === ---
-        // Attaches the click event to the new button
-        function setupAddProductsButton() {
-            const btn = document.getElementById('add-test-products-btn');
-            if (!btn) return;
-
-            // Simple custom modal
-            const showModal = (title, message) => {
-                let modal = document.getElementById('feedback-modal');
-                if (modal) modal.remove();
-                
-                modal = document.createElement('div');
-                modal.id = 'feedback-modal';
-                modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
-                modal.innerHTML = `
-                    <div class="bg-white rounded-lg shadow-xl p-6 max-w-sm w-full">
-                        <h3 class="text-xl font-semibold mb-3">${title}</h3>
-                        <p class="text-gray-700 mb-5">${message}</p>
-                        <button id="modal-close-btn" class="w-full bg-pink-600 text-white py-2 px-4 rounded-lg hover:bg-pink-700">OK</button>
-                    </div>
-                `;
-                document.body.appendChild(modal);
-                document.getElementById('modal-close-btn').onclick = () => modal.remove();
-            };
-
-            btn.addEventListener('click', async () => {
-                if (!db || !appId) {
-                    console.error("DB not initialized!");
-                    return;
-                }
-
-                btn.disabled = true;
-                btn.textContent = "Adding...";
-
-                // 5 Test Products
-                const testProducts = [
-                    { name: "Vintage Tee", price: 24.99, oldPrice: 30.00, image: "https://placehold.co/300x300/F87171/ffffff?text=Vintage+Tee" },
-                    { name: "Leather Bag", price: 79.99, oldPrice: 99.99, image: "https://placehold.co/300x300/FBBF24/ffffff?text=Leather+Bag" },
-                    { name: "Blue Denim Jeans", price: 54.50, oldPrice: 65.00, image: "https://placehold.co/300x300/60A5FA/ffffff?text=Denim+Jeans" },
-                    { name: "Running Sneakers", price: 88.00, oldPrice: 110.00, image: "https://placehold.co/300x300/34D399/ffffff?text=Sneakers" },
-                    { name: "Classic Watch", price: 120.00, oldPrice: 150.00, image: "https://placehold.co/300x300/A78BFA/ffffff?text=Watch" }
-                ];
-
-                try {
-                    const productsColPath = `/artifacts/${appId}/public/data/products`;
-                    console.log(`Adding 5 products to: ${productsColPath}`);
-                    
-                    for (const product of testProducts) {
-                        await addDoc(collection(db, productsColPath), product);
-                    }
-                    
-                    console.log("Successfully added 5 test products!");
-                    showModal("Success!", "5 test products have been added! Check the index.html page.");
-
-                } catch (error) {
-                    console.error("Error adding test products: ", error);
-                    showModal("Error", "Error adding products. Check console for details.");
-                } finally {
-                    btn.disabled = false;
-                    btn.textContent = "Add 5 Test Products";
-                }
-            });
-        }
-    </script>
-
-    <!-- Mobile sidebar script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebar = document.getElementById('sidebar');
-            const sidebarToggle = document.getElementById('sidebar-toggle');
-            const sidebarOverlay = document.getElementById('sidebar-overlay');
-
-            const toggleSidebar = () => {
-                sidebar.classList.toggle('-translate-x-full');
-                sidebarOverlay.classList.toggle('hidden');
-            };
-
-            if (sidebarToggle) {
-                sidebarToggle.addEventListener('click', toggleSidebar);
-            }
-
-            if (sidebarOverlay) {
-                sidebarOverlay.addEventListener('click', toggleSidebar);
+            if (e.target.classList.contains('deny-btn')) {
+                const id = e.target.dataset.id;
+                const docRef = doc(db, "vendor-applications", id);
+                await updateDoc(docRef, { status: 'denied' });
             }
         });
+
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        const toggleSidebar = () => {
+            sidebar.classList.toggle('-translate-x-full');
+            sidebarOverlay.classList.toggle('hidden');
+        };
+
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', toggleSidebar);
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', toggleSidebar);
+        }
     </script>
 </body>
 </html>
