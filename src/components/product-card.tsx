@@ -1,17 +1,29 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import type { Product } from "@/lib/products";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Eye } from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Product } from '@/lib/products';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Heart, Eye } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
 }
 
+declare global {
+  interface Window {
+    addToCart: (product: Product) => void;
+  }
+}
+
 export function ProductCard({ product }: ProductCardProps) {
+  const handleAddToCart = () => {
+    if (window.addToCart) {
+      window.addToCart(product);
+    }
+  };
+
   return (
     <Card className="overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl">
       <div className="group relative block">
@@ -52,7 +64,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <del className="text-sm text-gray-500">${product.oldPrice.toFixed(2)}</del>
           )}
         </div>
-        <Button className="w-full">Add To Cart</Button>
+        <Button className="w-full" onClick={handleAddToCart}>Add To Cart</Button>
       </CardContent>
     </Card>
   );

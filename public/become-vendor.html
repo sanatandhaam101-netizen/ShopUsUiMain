@@ -11,37 +11,82 @@
 <body class="bg-gray-50">
     <div class="container mx-auto p-6">
         <h1 class="text-4xl font-bold text-gray-800 text-center mb-10">Become a Vendor</h1>
-        <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Let's Get Started</h2>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">Join our curated marketplace of fashion-forward brands and boutiques. We are always looking for new and exciting vendors to partner with. Fill out the form below to tell us a little bit about your brand and we'll get back to you as soon as we can.</p>
-            <form action="#" method="POST">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <form id="become-vendor-form">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label for="brand-name" class="block text-gray-700">Brand Name</label>
-                        <input type="text" id="brand-name" name="brand-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        <label for="vendor-name" class="block text-gray-700">Your Name</label>
+                        <input type="text" id="vendor-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
                     </div>
                     <div>
-                        <label for="website" class="block text-gray-700">Website</label>
-                        <input type="url" id="website" name="website" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                    </div>
-                    <div>
-                        <label for="contact-name" class="block text-gray-700">Contact Name</label>
-                        <input type="text" id="contact-name" name="contact-name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-gray-700">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        <label for="vendor-email" class="block text-gray-700">Email Address</label>
+                        <input type="email" id="vendor-email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
                     </div>
                     <div class="md:col-span-2">
-                        <label for="about" class="block text-gray-700">Tell us about your brand</label>
-                        <textarea id="about" name="about" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                        <label for="vendor-brand" class="block text-gray-700">Brand Name</label>
+                        <input type="text" id="vendor-brand" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="vendor-message" class="block text-gray-700">Tell Us About Your Brand</label>
+                        <textarea id="vendor-message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required></textarea>
                     </div>
                 </div>
-                <div class="mt-6">
+                <div class="mt-8">
                     <button type="submit" class="w-full bg-pink-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-pink-700 transition-all">Submit Application</button>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDpNI7HDrSR5lnPuJisjQLndV0ssESzmuE",
+          authDomain: "our-ecommerce-cbucket-web.firebaseapp.com",
+          projectId: "our-ecommerce-cbucket-web",
+          storageBucket: "our-ecommerce-cbucket-web.firebasestorage.app",
+          messagingSenderId: "959672867883",
+          appId: "1:959672867883:web:3daae7a6e9d878ac259e6e"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        // Sign in anonymously to get permissions to write to the database
+        signInAnonymously(auth).catch((error) => {
+            console.error("Anonymous sign-in error:", error);
+        });
+
+        const vendorForm = document.getElementById('become-vendor-form');
+        vendorForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('vendor-name').value;
+            const email = document.getElementById('vendor-email').value;
+            const brand = document.getElementById('vendor-brand').value;
+            const message = document.getElementById('vendor-message').value;
+
+            try {
+                const docRef = await addDoc(collection(db, "vendor-applications"), {
+                    name,
+                    email,
+                    brand,
+                    message,
+                    status: 'pending' // pending, approved, denied
+                });
+                console.log("Document written with ID: ", docRef.id);
+                alert('Thanks for applying for a vendor with us, your application has been submitted');
+                vendorForm.reset();
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert('There was an error submitting your application. Please try again.');
+            }
+        });
+    </script>
 </body>
 </html>
